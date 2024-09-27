@@ -1,6 +1,16 @@
 $(document).ready(function() {
-    // Initialize tasks from localStorage
-    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    // Initialize tasks from localStorage with enhanced error handling
+    let tasks;
+    try {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+        if (!Array.isArray(tasks)) {
+            throw new Error("Tasks is not an array");
+        }
+    } catch (error) {
+        console.warn("Error parsing 'tasks' from localStorage:", error);
+        tasks = [];
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
 
      // Debugging: Check the type and content of 'tasks'
      console.log("Initial tasks from localStorage:", tasks);
@@ -15,12 +25,12 @@ $(document).ready(function() {
             const taskCard = $('<div>').addClass('task-card').attr('data-id', task.id);
 
             // Color-coding based on deadline
-            const today = dayjs();
-            const deadline = dayjs(task.deadline);
-            if (deadline.isBefore(today, 'day')) {
-                taskCard.addClass('overdue');
-            } else if (deadline.diff(today, 'day') <= 3) { // Nearing deadline within 3 days
-                taskCard.addClass('near-deadline');
+            if (task.status === 'Not Yet Started') {
+                taskCard.addClass('not-yet-started');
+            } else if (task.status === 'In Progress') {
+                taskCard.addClass('in-progress');
+            } else if (task.status === 'Completed') {
+                taskCard.addClass('completed');
             }
 
             // Task content
@@ -35,7 +45,6 @@ $(document).ready(function() {
             $(`#${task.status.toLowerCase().replace(/\s/g, '-')}`).append(taskCard);
         });
     }
-
     // Initial render
     renderTasks();
 
