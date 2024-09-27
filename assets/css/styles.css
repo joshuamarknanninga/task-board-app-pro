@@ -62,13 +62,16 @@ header {
     position: relative;
 }
 
-.task-card.overdue {
+.task-card.not-yet-started {
     border-left-color: red;
 }
 
-.task-card.near-deadline {
+.task-card.in-progress {
     border-left-color: yellow;
 }
+
+.task-card.completed {
+    border-left-color: green;
 
 .task-card .delete-btn {
     position: absolute;
