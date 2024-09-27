@@ -2,6 +2,10 @@ $(document).ready(function() {
     // Initialize tasks from localStorage
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
+     // Debugging: Check the type and content of 'tasks'
+     console.log("Initial tasks from localStorage:", tasks);
+     console.log("Type of tasks:", typeof tasks);
+
     // Function to render tasks
     function renderTasks() {
         // Clear all task lists
@@ -24,8 +28,8 @@ $(document).ready(function() {
             taskCard.append(`<p>${task.description}</p>`);
             taskCard.append(`<p>Deadline: ${task.deadline}</p>`);
             // Delete button
-            const deleteBtn = $('<button>').addClass('delete-btn').html('&times;');
-            taskCard.append(deleteBtn);
+            const deleteButton = $('<button>').addClass('delete-btn').html('&times;');
+            taskCard.append(deleteButton);
 
             // Append to respective column
             $(`#${task.status.toLowerCase().replace(/\s/g, '-')}`).append(taskCard);
