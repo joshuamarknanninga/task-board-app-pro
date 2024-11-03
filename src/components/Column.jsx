@@ -2,7 +2,7 @@
 
 import React, { useState, useContext } from 'react';
 import Task from './Task';
-import { Droppable } from 'react-beautiful-dnd';
+import { Droppable } from '@hello-pangea/dnd'; // Removed Draggable from import
 import { BoardContext } from '../context/BoardContext';
 import './Column.css';
 

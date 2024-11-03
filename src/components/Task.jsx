@@ -1,10 +1,19 @@
 // src/components/Task.jsx
 
 import React, { useState, useContext } from 'react';
-import { Draggable } from 'react-beautiful-dnd'; // Ensure this matches the installed library
+import { Draggable } from '@hello-pangea/dnd'; // Updated import
 import { BoardContext } from '../context/BoardContext';
 import './Task.css';
 
+/**
+ * Task Component
+ * Represents a single task within a column.
+ *
+ * Props:
+ * - task: An object containing the task's id, title, and description.
+ * - index: The index of the task within the column's task list.
+ * - columnId: The ID of the column to which the task belongs.
+ */
 const Task = ({ task, index, columnId }) => {
   const { editTask, deleteTask } = useContext(BoardContext);
   const [isEditing, setIsEditing] = useState(false);
@@ -24,7 +33,7 @@ const Task = ({ task, index, columnId }) => {
    */
   const handleEdit = (e) => {
     e.preventDefault();
-    if (editedTitle.trim() === '') return; // Prevent empty titles
+    if (editedTitle.trim() === '') return;
 
     // Update the task in the context
     editTask(columnId, task.id, {
@@ -35,7 +44,7 @@ const Task = ({ task, index, columnId }) => {
   };
 
   return (
-    <Draggable draggableId={String(task.id)} index={index}>
+    <Draggable draggableId={task.id} index={index}>
       {(provided, snapshot) => (
         <div
           className={`task ${snapshot.isDragging ? 'dragging' : ''}`}
