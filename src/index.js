@@ -4,7 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BoardProvider } from './context/BoardContext';
-import './styles/App.css'; // Optional: If you want to apply global styles here
+// import ErrorBoundary from './components/ErrorBoundary';
+import './styles/App.css'; // Import global styles
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

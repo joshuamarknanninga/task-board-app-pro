@@ -2,7 +2,7 @@
 
 import React, { useContext } from 'react';
 import Column from './Column';
-import { DragDropContext } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { BoardContext } from '../context/BoardContext';
 import './Board.css';
 

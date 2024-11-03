@@ -13,9 +13,9 @@ export const BoardProvider = ({ children }) => {
     return savedColumns
       ? JSON.parse(savedColumns)
       : [
-          { id: '1', title: 'To Do', tasks: [] },
-          { id: '2', title: 'In Progress', tasks: [] },
-          { id: '3', title: 'Done', tasks: [] },
+          { id: 'column-1', title: 'To Do', tasks: [] },
+          { id: 'column-2', title: 'In Progress', tasks: [] },
+          { id: 'column-3', title: 'Done', tasks: [] },
         ];
   });
 
