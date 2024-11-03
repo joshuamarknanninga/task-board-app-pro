@@ -1,0 +1,97 @@
+/* src/components/Task.css */
+
+.task {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+    transition: background-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .task:hover {
+    background-color: #f4f5f7;
+    box-shadow: 0 4px 8px rgba(9, 30, 66, 0.25);
+  }
+  
+  .task h3 {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    color: #172b4d;
+  }
+  
+  .task p {
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+    color: #5e6c84;
+  }
+  
+  .task-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+  
+  .task-actions button {
+    padding: 4px 8px;
+    font-size: 0.8em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .task-actions button:hover {
+    opacity: 0.8;
+  }
+  
+  .task-actions button:first-child {
+    background-color: #0079bf;
+    color: white;
+  }
+  
+  .task-actions button:last-child {
+    background-color: #eb5a46;
+    color: white;
+  }
+  
+  .edit-task-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-task-form input,
+  .edit-task-form textarea {
+    margin-bottom: 5px;
+    padding: 6px;
+    border: 1px solid #dfe1e6;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .edit-task-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+  
+  .edit-task-buttons button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-task-buttons button:first-child {
+    background-color: #5aac44;
+    color: white;
+  }
+  
+  .edit-task-buttons button:last-child {
+    background-color: #eb5a46;
+    color: white;
+  }
+  
+  .edit-task-form button:hover {
+    opacity: 0.9;
+  }
+  

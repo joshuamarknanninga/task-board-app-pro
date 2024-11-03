@@ -1,0 +1,16 @@
+/* src/components/Board.css */
+
+.board {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .board {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
