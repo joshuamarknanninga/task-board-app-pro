@@ -1,11 +1,12 @@
 // src/App.jsx
+
 import React from 'react';
 import Board from './components/Board';
+import './styles/App.css';
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Task Board App Pro</h1>
       <Board />
     </div>
   );

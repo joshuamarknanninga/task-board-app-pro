@@ -57,7 +57,7 @@ const Column = ({ column }) => {
         {(provided, snapshot) => (
           <div
             className={`task-list ${
-              snapshot.isDraggingOver ? 'dragging-over' : ''
+              snapshot.isDraggingOver ? 'highlight' : ''
             }`}
             ref={provided.innerRef}
             {...provided.droppableProps}

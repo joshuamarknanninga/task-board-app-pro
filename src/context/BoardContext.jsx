@@ -21,6 +21,7 @@ export const BoardProvider = ({ children }) => {
 
   // Persist columns to localStorage whenever they change
   useEffect(() => {
+    console.log('Saving columns to localStorage:', columns); // Debug log
     localStorage.setItem('columns', JSON.stringify(columns));
   }, [columns]);
 

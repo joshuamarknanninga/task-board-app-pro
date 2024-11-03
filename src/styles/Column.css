@@ -1,4 +1,4 @@
-/* src/components/Column.css */
+/* src/styles/Column.css */
 
 .column {
   background-color: #ebecf0;
@@ -21,6 +21,12 @@
   min-height: 100px;
   overflow-y: auto;
   padding: 5px;
+  transition: background-color 0.2s ease;
+}
+
+/* Highlight when a task is dragged over */
+.task-list.highlight {
+  background-color: #dfe3e6;
 }
 
 .add-task-form {
@@ -38,7 +44,7 @@
   resize: vertical;
 }
 
-.add-task-form button {
+.add-task-button {
   padding: 8px;
   background-color: #5aac44;
   color: white;
@@ -47,6 +53,6 @@
   cursor: pointer;
 }
 
-.add-task-form button:hover {
+.add-task-button:hover {
   background-color: #519839;
 }

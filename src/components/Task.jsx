@@ -19,12 +19,17 @@ const Task = ({ task, index, columnId }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedTitle, setEditedTitle] = useState(task.title);
   const [editedDesc, setEditedDesc] = useState(task.description);
+  const [isDeleting, setIsDeleting] = useState(false); // New state for deletion animation
 
   /**
-   * Handles the deletion of a task.
+   * Handles the deletion of a task with fade-out animation.
    */
   const handleDelete = () => {
-    deleteTask(columnId, task.id);
+    setIsDeleting(true); // Trigger fade-out
+    // Delay actual deletion to allow animation to complete
+    setTimeout(() => {
+      deleteTask(columnId, task.id);
+    }, 500); // Duration should match fade-out animation duration
   };
 
   /**
@@ -47,7 +52,9 @@ const Task = ({ task, index, columnId }) => {
     <Draggable draggableId={task.id} index={index}>
       {(provided, snapshot) => (
         <div
-          className={`task ${snapshot.isDragging ? 'dragging' : ''}`}
+          className={`task ${
+            snapshot.isDragging ? 'dragging' : ''
+          } ${isDeleting ? 'fade-out' : 'fade-in'}`} // Apply animations
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
@@ -55,7 +62,7 @@ const Task = ({ task, index, columnId }) => {
           style={{
             ...provided.draggableProps.style,
             boxShadow: snapshot.isDragging
-              ? '0 2px 8px rgba(0,0,0,0.2)'
+              ? '0 4px 12px rgba(0,0,0,0.2)'
               : 'none',
           }}
         >

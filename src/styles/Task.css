@@ -1,59 +1,82 @@
-/* src/components/Task.css */
+/* src/styles/Task.css */
 
 .task {
-  background-color: #fff;
-  border-radius: 6px;
+  background-color: white;
+  border-radius: 4px;
   padding: 10px;
   margin-bottom: 8px;
-  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
-  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  transition: box-shadow 0.2s ease;
 }
 
-.task:hover {
-  background-color: #f4f5f7;
-  box-shadow: 0 4px 8px rgba(9, 30, 66, 0.25);
+.task.dragging {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.task h3 {
+.task-title {
   margin: 0 0 5px 0;
-  font-size: 1em;
+  font-size: 16px;
   color: #172b4d;
 }
 
-.task p {
+.task-description {
   margin: 0 0 10px 0;
-  font-size: 0.9em;
+  font-size: 14px;
   color: #5e6c84;
 }
 
 .task-actions {
   display: flex;
-  justify-content: flex-end;
-  gap: 5px;
+  gap: 10px;
 }
 
-.task-actions button {
-  padding: 4px 8px;
-  font-size: 0.8em;
+.edit-button,
+.delete-button,
+.save-button,
+.cancel-button {
+  padding: 5px 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.task-actions button:hover {
-  opacity: 0.8;
-}
-
-.task-actions button:first-child {
+.edit-button {
   background-color: #0079bf;
   color: white;
 }
 
-.task-actions button:last-child {
-  background-color: #eb5a46;
+.edit-button:hover {
+  background-color: #026aa7;
+}
+
+.delete-button {
+  background-color: #b04632;
   color: white;
 }
 
+.delete-button:hover {
+  background-color: #933b27;
+}
+
+.save-button {
+  background-color: #5aac44;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #519839;
+}
+
+.cancel-button {
+  background-color: #dfe1e6;
+  color: #172b4d;
+}
+
+.cancel-button:hover {
+  background-color: #c1c7d0;
+}
+
+/* Edit Task Form Styles */
 .edit-task-form {
   display: flex;
   flex-direction: column;
@@ -62,7 +85,7 @@
 .edit-task-form input,
 .edit-task-form textarea {
   margin-bottom: 5px;
-  padding: 6px;
+  padding: 8px;
   border: 1px solid #dfe1e6;
   border-radius: 4px;
   resize: vertical;
@@ -70,27 +93,5 @@
 
 .edit-task-buttons {
   display: flex;
-  justify-content: flex-end;
-  gap: 5px;
-}
-
-.edit-task-buttons button {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.edit-task-buttons button:first-child {
-  background-color: #5aac44;
-  color: white;
-}
-
-.edit-task-buttons button:last-child {
-  background-color: #eb5a46;
-  color: white;
-}
-
-.edit-task-form button:hover {
-  opacity: 0.9;
+  gap: 10px;
 }
