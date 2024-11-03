@@ -1,4 +1,5 @@
 // src/components/Column.jsx
+
 import React, { useState, useContext } from 'react';
 import Task from './Task';
 import { Droppable } from 'react-beautiful-dnd';
@@ -15,7 +16,7 @@ const Column = ({ column }) => {
     if (taskTitle.trim() === '') return;
 
     const newTask = {
-      id: Date.now().toString(),
+      id: Date.now().toString(), // Ensure ID is a string
       title: taskTitle,
       description: taskDesc,
     };

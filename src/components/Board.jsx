@@ -1,4 +1,5 @@
 // src/components/Board.jsx
+
 import React, { useContext } from 'react';
 import Column from './Column';
 import { DragDropContext } from 'react-beautiful-dnd';
