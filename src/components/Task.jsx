@@ -3,7 +3,7 @@
 import React, { useState, useContext } from 'react';
 import { Draggable } from '@hello-pangea/dnd'; // Updated import
 import { BoardContext } from '../context/BoardContext';
-import './Task.css';
+import '../styles/Task.css'; // Updated import
 
 /**
  * Task Component

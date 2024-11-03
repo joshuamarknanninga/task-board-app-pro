@@ -2,9 +2,10 @@
 
 import React, { useState, useContext } from 'react';
 import Task from './Task';
-import { Droppable } from '@hello-pangea/dnd'; // Removed Draggable from import
+import { Droppable } from '@hello-pangea/dnd'; // Updated import
 import { BoardContext } from '../context/BoardContext';
-import './Column.css';
+import '../styles/Column.css';
+import { v4 as uuidv4 } from 'uuid';
 
 /**
  * Column Component
@@ -30,7 +31,7 @@ const Column = ({ column }) => {
 
     // Create a new task object with a unique string ID
     const newTask = {
-      id: `task-${Date.now().toString()}`, // Prefixing for clarity
+      id: uuidv4(), // Prefixing for clarity
       title: taskTitle,
       description: taskDesc,
     };

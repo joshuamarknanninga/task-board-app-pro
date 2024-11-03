@@ -1,6 +1,7 @@
 // src/context/BoardContext.jsx
 
 import React, { createContext, useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid'; // Import UUID
 
 // Create the context
 export const BoardContext = createContext();

@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import Column from './Column';
 import { DragDropContext } from '@hello-pangea/dnd'; // Updated import
 import { BoardContext } from '../context/BoardContext';
-import './Board.css';
+import '../styles/Board.css'; // Updated import
 
 /**
  * Board Component
