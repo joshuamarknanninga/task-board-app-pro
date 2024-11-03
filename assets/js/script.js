@@ -117,3 +117,21 @@ $(document).ready(function() {
         const newStatus = $(this).parent().data('status');
         tasks = tasks.map(task => {
             if (task.id === draggedTask) {
+                return { ...task, status: newStatus };
+            }
+            return task;
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        renderTasks();
+    });
+
+    // Make tasks draggable
+    $(document).on('mousedown', '.task-card', function() {
+        $(this).attr('draggable', 'true');
+    });
+
+    // Prevent default dragend behavior
+    $(document).on('dragend', '.task-card', function() {
+        $(this).attr('draggable', 'false');
+    });
+});

@@ -147,3 +147,7 @@ header {
     cursor: pointer;
     border-radius: 5px;
 }
+
+#task-form button:hover {
+    background-color: #0069d9;
+}
